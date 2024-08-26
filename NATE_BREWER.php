@@ -7,18 +7,27 @@
 	$birthday = "January 1, 2001";
 
 	$phone_num = "(101)-010-1010";
-	$email = "natebrewer092001@gmail.com";
+	$email = "zero@one.com";
 
 	$linkedin = "linkedin.com/in/natebrewer09";
 	$gitHub = "github.com/brewern5";
 	$my_web = "nate.brewer.com";
 
-	$languages = array( "English (Native)", "Geman (Causual)" );
+	$profile_img = array("src" => "assets/images/Nateimg.jpg", "alt" => "This is an image of me, if you couldn't tell.");
+
+	$languages = array(
+		 array("lang" => "English", "profecient" => " (Native)"),
+		 array("lang" => "German", "profecient"=> " (Causual)") 
+		);
+
+	$skills = array("Javascript", "Java", "HTML/CSS", "IoT", "PHP (SOON!)");
+
+	$other_skills = array("C++", "Git", "Arduino", "JSON", "Linux", "Fruity Loops DAW", "Studio One 6 DAW");
 
 	// Experience, job information, and summary inforation
 	$job_title = "Web Developer";
 
-	$education ="I am an Applied Software Engineering student at Northern Kentucky University.
+	$education_long ="I am an Applied Software Engineering student at Northern Kentucky University.
 				I graduated from Highlands Highschool in 2020.";
 				
 	$work_exp = "I currently am a student worker at Griffin Hall as an IT assistant in the 
@@ -29,10 +38,19 @@
 					I am a guitarist with a passion for music, I mostly cover songs but have
 					been working on a few originals. Fly fishing is a recent hobby of mine,
 					I just learned the basics over this past summer.";
-	$interests_short = 	array( "Guitar", "Fly Fishing", "Wood-Working" );
+	$interests_array = 	array( "Guitar", "Fly Fishing", "Wood-Working" );
 
-	// will hold all instances of experience_objs
-	$experience_array = array();
+	//Education information - fun little 2d array with associatve arrays
+	$education = array( 
+		array("location" => "Highlands Highschool", "honors" => "Highschool Diploma", "year" => "2015 - 2020"),
+		array("location" => "Northen Kentucky University", "honors" => "Current Applied Software Engineering Student", "year" => "2022 - 2026")
+	);
+
+	$awards = array(
+		array("award_name" => "First Place Unrated - Chess", "award_des" => "I won this award for being the best unrated player in a chess tournament. I was just better."),
+		array("award_name" => "Participation Award", "award_des" => "I participated at something!")
+	);
+	
 
 	// will hold all information on current/previous jobs
 	class experience{
@@ -126,7 +144,7 @@
 	// constructing digitorium position
 	$digitorium = New experience();
 
-	// setting properties 
+	// setting Digitorium properties 
 	$digitorium->set_title('Digitorium Technical Support Specialist');
 
 	$digitorium->set_position_time('February 2024 - Current');
@@ -136,18 +154,84 @@
 								includes, video/audio routing, robotic/LED light fixture operation, and  live audio 
 								management.');
 
-	$digitorium->set_employer('Northern Kentucky University - Griffin Hall');
+	$digitorium->set_employer('NKU - Griffin Hall');
 
 	$digitorium->set_achievement(array('Understanding of Matrix switcher for audio/video routing', 'Live Audio Soundscaping', 'Event Management'));
 
 	$digitorium->set_tech_used(array('Creston use for video/audio routing', 'Robotic/LED light fixture', 'Video Wall'));
+
+
+	// constructing the planetarium position
+	$planetarium = new experience();
+
+	// setting planetarium properties 
+	$planetarium->set_title('Planetarium Student Software Designer'); // I actually do not know the correct title for here
+
+	$planetarium->set_position_time('January 2024 - Current');
+	
+	$planetarium->set_description("Creating digital shows for a Digistar 7 dome using a dual projector system. 
+								These shows were created using Digistar's in-house scripting langauge with
+								Javascript used in it's place sometimes. Presenting shows is also a responsibility");
+
+	$planetarium->set_employer('NKU - Herrmann Science Center');
+
+	$planetarium->set_achievement(array('Creating Digistar7 Shows', 'Utilizing two projectors to display video/images', 'Learn in-house scripting langauge'));
+
+	$planetarium->set_tech_used(array('Digistar 7', 'Javascript', 'Windows Server'));
+
+
+	// constructing the highschool IT position
+	$highschool_it = new experience();
+
+	// setting highschool IT properties 
+	$highschool_it->set_title('Student IT tech');
+
+	$highschool_it->set_position_time('August 2019 - May 2020');
+	
+	$highschool_it->set_description("Worked at the Student Help desk at my highschool troubleshoot and fix any
+									hardware/ software issues on their 2016 MacBook Air. Hardware replacement 
+									inluded: replacing WiFi-Chip, Battery replacement, Screen Replacement.
+									Some issues had to be completed by third party certified technicians.
+									This meaning we had to have detailed documentation of the issues.");
+
+	$highschool_it->set_employer('Highlands Highschool');
+
+	$highschool_it->set_achievement(array('Hardware - Software troubleshooting', 'Apple hardware Certifiaction', 'Documentation and recording'));
+
+	$highschool_it->set_tech_used(array('2016 MacBook Air', 'Apple Certification', 'Apple Repair center documentation'));
+
+
+	// constructing the Kroger Manager position
+	$kroger_manager = new experience();
+
+	// setting Kroger Manager properties 
+	$kroger_manager->set_title('Dairy Manager');
+
+	$kroger_manager->set_position_time('January 2022 - May 2022');
+	
+	$kroger_manager->set_description("Leading a team of employees at a local Kroger's dairy department.
+									Created the shift schedules and directed the team towards certain
+									tasks. Used a Zebra device to count, order, and check experations.
+									I would order product daily and try to minimize product loss.");
+
+	$kroger_manager->set_employer('Newport Kroger');
+
+	$kroger_manager->set_achievement(array('Managing a Small team on different shifts', 'Product/Inventry Managment', 'Multi-Shift Scheduling'));
+
+	$kroger_manager->set_tech_used(array('Zebra', 'Oracle Cloud', 'MyTime'));
+
+	$project = array(
+		array("proj_name" => "Java Game", "proj_des" => "This is a game, made entirely by RyiSnow on Youtube, all credit goes to this individual. This is a project I have been working on over summer break to understand more about how Java works and to create programs with Java, in which the knowledge I have learned in insurmountable.", "proj_link" => "https://github.com/brewern5/Java-Game/tree/main", "proj_img_src" => "assets/images/JavaGame.jpg"), //you made it this far huh? props to you
+		array("proj_name" => "eCommerce Website", "proj_des" => 'This is a self-extended project of a final assignment. This project replicates an eCommerce site that users can "purchase" items from different selectable categories.', "proj_link" => "https://github.com/brewern5/eCommerceProject", "proj_img_src" => "assets/images/eCommerce.jpg"),
+		array("proj_name" => "Ultrasonic Sensor", "proj_des" => "Experimental code for two Ultrasonic sensors that provide distance data able to count number of people based on direction the sensors are activated. Can print number on external display.", "proj_link" => "https://www.linkedin.com/in/natebrewer09/overlay/1635516382149/single-media-viewer/?profileId=ACoAAECuvuYBvueOVXNMTvJ1jn9SvoohZLiYXxE", "proj_img_src" => "assets/images/UltraSonicSensor.jpg")
+	);
 
 ?>
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
     <title>
-		<?php echo "$first_name $last_name Resume"?> 
+		<?php echo $first_name . " " . $last_name . "Resume"?> 
 	</title>
     
     <!-- Meta -->
@@ -175,8 +259,8 @@
 	    <div class="resume-wrapper-inner mx-auto text-start bg-white shadow-lg">
 		    <header class="resume-header pt-4 pt-md-0">
 			    <div class="row">
-				    <div class="col-block col-md-auto resume-picture-holder text-center text-md-start">
-				        <img class="picture" src="assets/images/Nateimg.jpg" alt="">
+				    <div class="col-block col-md-auto resume-picture-holder text-center  text-md-start">
+				        <img class="picture" src=<?php echo $profile_img['src'] ?> alt=<?php echo $profile_img['alt']?>>
 				    </div><!--//col-->
 				    <div class="col">
 					    <div class="row p-4 justify-content-center justify-content-md-between">
@@ -208,7 +292,7 @@
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0"><?php echo "$education $work_exp $interests_long" ?></p>
+					    <p class="mb-0"><?php echo $education_long . " " . $work_exp . " " . $interests_long ?></p>
 				    </div>
 			    </section><!--//summary-section-->
 			    <div class="row">
@@ -221,24 +305,24 @@
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $digitorium->get_title()?></h3>
-										        <div class="resume-company-name ms-auto"><?php echo "" . $digitorium->get_employer()?></div>
+										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $digitorium->get_title(); ?></h3>
+										        <div class="resume-company-name ms-auto"><?php echo "" . $digitorium->get_employer(); ?></div>
 										    </div><!--//row-->
-										    <div class="resume-position-time"><?php echo "" . $digitorium->get_position_time()?></div>
+										    <div class="resume-position-time"><?php echo "" . $digitorium->get_position_time(); ?></div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p><?php echo "" . $digitorium->get_description()?></p>
+										    <p><?php echo "" . $digitorium->get_description(); ?></p>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										    <ul>
-											    <li><?php echo "" . $digitorium->get_achievement(1)?></li>
-											    <li><?php echo "" . $digitorium->get_achievement(2)?></li>
-											    <li><?php echo "" . $digitorium->get_achievement(3)?></li>
+											    <li><?php echo "" . $digitorium->get_achievement(1); ?></li>
+											    <li><?php echo "" . $digitorium->get_achievement(2); ?></li>
+											    <li><?php echo "" . $digitorium->get_achievement(3); ?></li>
 										    </ul>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(1)?></span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(2)?></span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(3)?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(1); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(2); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(3); ?></span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
 
@@ -248,23 +332,24 @@
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Senior Software Developer</h3>
-										        <div class="resume-company-name ms-auto">Google</div>
+										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $planetarium->get_title() ?></h3>
+										        <div class="resume-company-name ms-auto"><?php echo "" . $planetarium->get_employer() ?></div>
 										    </div><!--//row-->
-										    <div class="resume-position-time">2019 - 2023</div>
+										    <div class="resume-position-time"><?php echo "" . $planetarium->get_position_time() ?></div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
+										    <p><?php echo "" . $planetarium->get_description(); ?></p>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
-										    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+										    <ul>
+											    <li><?php echo "" . $planetarium->get_achievement(1); ?></li>
+											    <li><?php echo "" . $planetarium->get_achievement(2); ?></li>
+											    <li><?php echo "" . $planetarium->get_achievement(3); ?></li>
+										    </ul>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">React</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Redux</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Django</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Webpack</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/SASS</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">MySQL</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $planetarium->get_tech_used(1); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $planetarium->get_tech_used(2); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $planetarium->get_tech_used(3); ?></span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
 
@@ -274,21 +359,24 @@
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Co-Founder & Lead Developer</h3>
-										        <div class="resume-company-name ms-auto">To-do Lists</div>
+										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $highschool_it->get_title(); ?></h3>
+										        <div class="resume-company-name ms-auto"><?php echo "" . $highschool_it->get_employer(); ?></div>
 										    </div><!--//row-->
-										    <div class="resume-position-time">2015 - 2019</div>
+										    <div class="resume-position-time"><?php echo "" . $highschool_it->get_position_time(); ?></div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
-										    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+										    <p><?php echo "" . $highschool_it->get_description(); ?></p>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
+										    <ul>
+											    <li><?php echo "" . $highschool_it->get_achievement(1); ?></li>
+											    <li><?php echo "" . $highschool_it->get_achievement(2); ?></li>
+											    <li><?php echo "" . $highschool_it->get_achievement(3); ?></li>
+										    </ul>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Django</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">JavaScript</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Node.js</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Require.js</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/SASS</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $highschool_it->get_tech_used(1); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $highschool_it->get_tech_used(2); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $highschool_it->get_tech_used(3); ?></span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
 
@@ -298,19 +386,24 @@
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Web Developer <small class="text-muted">(Intern)</small></h3>
-										        <div class="resume-company-name ms-auto">Amazon</div>
+										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $kroger_manager->get_title(); ?></h3>
+										        <div class="resume-company-name ms-auto"><?php echo "" . $kroger_manager->get_employer(); ?></div>
 										    </div><!--//row-->
-										    <div class="resume-position-time">2014 - 2015</div>
+										    <div class="resume-position-time"><?php echo "" . $kroger_manager->get_position_time(); ?></div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum.</p>
+										    <p><?php echo "" . $kroger_manager->get_description(); ?></p>
+											<h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
+										    <ul>
+											    <li><?php echo "" . $kroger_manager->get_achievement(1); ?></li>
+											    <li><?php echo "" . $kroger_manager->get_achievement(2); ?></li>
+											    <li><?php echo "" . $kroger_manager->get_achievement(3); ?></li>
+										    </ul>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Ruby on Rails</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">jQuery</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/LESS</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">MongoDB</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $kroger_manager->get_tech_used(1); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $kroger_manager->get_tech_used(2); ?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $kroger_manager->get_tech_used(3); ?></span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
 
@@ -328,34 +421,34 @@
 						        <div class="resume-skill-item">
 							        <ul class="list-unstyled mb-4">
 								        <li class="mb-2">
-								            <div class="resume-skill-name">Angular</div>
+								            <div class="resume-skill-name"><?php echo "$skills[0]" ?></div>
 									        <div class="progress resume-progress">
-											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 98%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">React</div>
+								            <div class="resume-skill-name"><?php echo "$skills[1]" ?></div>
 									        <div class="progress resume-progress">
-											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 94%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">JavaScript</div>
+								            <div class="resume-skill-name"><?php echo "$skills[2]" ?></div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 96%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        
 								        <li class="mb-2">
-								            <div class="resume-skill-name">Node.js</div>
+								            <div class="resume-skill-name"><?php echo "$skills[3]" ?></div>
 									        <div class="progress resume-progress">
-											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 92%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 36.51342%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">HTML/CSS/SASS/LESS</div>
+								            <div class="resume-skill-name"><?php echo "$skills[4]" ?></div>
 									        <div class="progress resume-progress">
-											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 96%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 7.92874001%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 							        </ul>
@@ -363,15 +456,13 @@
 						        <div class="resume-skill-item">
 						            <h4 class="resume-skills-cat font-weight-bold">Others</h4>
 						            <ul class="list-inline">
-							            <li class="list-inline-item"><span class="badge badge-light">DevOps</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Code Review</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Git</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Unit Testing</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Wireframing</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Sketch</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Balsamiq</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">WordPress</span></li>
-							            <li class="list-inline-item"><span class="badge badge-light">Shopify</span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[0]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[1]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[2]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[3]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[4]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[5]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[6]" ?></span></li>
 						            </ul>
 						        </div><!--//resume-skill-item-->
 						    </div><!--resume-section-content-->
@@ -381,14 +472,14 @@
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled">
 								    <li class="mb-2">
-								        <div class="resume-degree font-weight-bold">MSc in Computer Science</div>
-								        <div class="resume-degree-org">University College London</div>
-								        <div class="resume-degree-time">2013 - 2014</div>
+								        <div class="resume-degree font-weight-bold"><?php echo $education[0]["honors"] ?></div>
+								        <div class="resume-degree-org"><?php echo $education[0]["location"] ?></div>
+								        <div class="resume-degree-time"><?php echo $education[0]["year"] ?></div>
 								    </li>
 								    <li>
-								        <div class="resume-degree font-weight-bold">BSc Maths and Physics</div>
-								        <div class="resume-degree-org">Imperial College London</div>
-								        <div class="resume-degree-time">2010 - 2013</div>
+								        <div class="resume-degree font-weight-bold"><?php echo $education[1]["honors"] ?></div>
+								        <div class="resume-degree-org"><?php echo $education[1]["location"] ?></div>
+								        <div class="resume-degree-time"><?php echo $education[1]["year"] ?></div>
 								    </li>
 							    </ul>
 						    </div>
@@ -399,13 +490,13 @@
 							    <ul class="list-unstyled resume-awards-list">
 								    <li class="mb-2 ps-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">Award Name Lorem</div>
-								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</div>
+								        <div class="resume-award-name"><?php echo $awards[0]["award_name"] ?></div>
+								        <div class="resume-award-desc"><?php echo $awards[0]["award_des"] ?></div>
 								    </li>
 								    <li class="mb-0 ps-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">Award Name Ipsum</div>
-								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque.</div>
+								        <div class="resume-award-name"><?php echo $awards[1]["award_name"] ?></div>
+								        <div class="resume-award-desc"><?php echo $awards[1]["award_des"] ?></div>
 								    </li>
 							    </ul>
 						    </div>
@@ -414,9 +505,8 @@
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Languages</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled resume-lang-list">
-								    <li class="mb-2"><span class="resume-lang-name font-weight-bold">English</span> <small class="text-muted font-weight-normal">(Native)</small></li>
-								    <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold">French</span> <small class="text-muted font-weight-normal">(Professional)</small></li>
-								    <li><span class="resume-lang-name font-weight-bold">Spanish</span> <small class="text-muted font-weight-normal">(Professional)</small></li>
+								    <li class="mb-2"><span class="resume-lang-name font-weight-bold"><?php echo $languages[0]["lang"] ?></span><small class="text-muted font-weight-normal"><?php echo $languages[0]["profecient"] ?></span></small></li>
+								    <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold"><?php echo $languages[1]["lang"] ?></span></span> <small class="text-muted font-weight-normal"><?php echo $languages[1]["profecient"] ?></span></small></li>
 							    </ul>
 						    </div>
 					    </section><!--//language-section-->
@@ -424,9 +514,9 @@
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Interests</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled">
-								    <li class="mb-1">Climbing</li>
-								    <li class="mb-1">Snowboarding</li>
-								    <li class="mb-1">Cooking</li>
+								    <li class="mb-1"><?php echo $interests_array[0] ?></li>
+								    <li class="mb-1"><?php echo $interests_array[1] ?></li>
+								    <li class="mb-1"><?php echo $interests_array[2] ?></li>
 							    </ul>
 						    </div>
 					    </section><!--//interests-section-->
@@ -438,31 +528,31 @@
 					<div class="row mt-4">
 						<div class="col-md-4">
 							<div class="card">
-								<img src="path-to-project-image1.jpg" alt="Project 1" class="card-img-top">
+								<img src="<?php echo $project[0]["proj_img_src"] ?>" alt="<?php echo $project[0]["proj_name"] ?>" class="card-img-top">
 								<div class="card-body">
-									<h5 class="card-title">Project 1</h5>
-									<p class="card-text">Brief description of Project 1.</p>
-									<a href="btn btn-outline-primary" href="#">Go to link</a>
+									<h5 class="card-title"><?php echo $project[0]["proj_name"] ?></h5>
+									<p class="card-text"><?php echo $project[0]["proj_des"] ?></p>
+									<a href=<?php echo $project[0]["proj_link"] ?>>Go to link</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="card">
-								<img src="path-to-project-image2.jpg" alt="Project 2" class="card-img-top">
+								<img src=<?php echo $project[1]["proj_img_src"] ?> alt=<?php echo $project[1]["proj_name"] ?> class="card-img-top">
 								<div class="card-body">
-									<h5 class="card-title">Project 2</h5>
-									<p class="card-text">Brief description of Project 2.</p>
-									<a href="btn btn-outline-primary" href="#">Go to link</a>
+									<h5 class="card-title"><?php echo $project[1]["proj_name"] ?></h5>
+									<p class="card-text"><?php echo $project[1]["proj_des"] ?></p>
+									<a href=<?php echo $project[1]["proj_link"] ?>>Go to link</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="card">
-								<img src="path-to-project-image3.jpg" alt="Project 3" class="card-img-top">
+								<img src=<?php echo $project[2]["proj_img_src"] ?> alt=<?php echo $project[2]["proj_name"] ?> class="card-img-top">
 								<div class="card-body">
-									<h5 class="card-title">Project 3</h5>
-									<p class="card-text">Brief description of Project 3.</p>
-									<a href="btn btn-outline-primary" href="#">Go to link</a>
+									<h5 class="card-title"><?php echo $project[2]["proj_name"] ?></h5>
+									<p class="card-text"><?php echo $project[2]["proj_des"] ?></p>
+									<a href=<?php echo $project[2]["proj_link"] ?>>Go to link</a>
 								</div>
 							</div>
 						</div>
@@ -477,7 +567,7 @@
     
     <footer class="footer text-center pt-2 pb-5">
 	    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i> by Your name</small>
+        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i><?php echo $first_name . " " . $last_name ?></small>
     </footer>
 
     
