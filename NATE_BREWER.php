@@ -38,14 +38,23 @@
 	class experience{
 		// Properties
 		public $title;
+
 		public $position_time;
+
 		public $description;
+
 		public $employer;
-		public $achievements_array = array();
-		public $tech_used_array = array();
+
+		public $achievement1;
+		public $achievement2;
+		public $achievement3;
+
+		public $tech_used1;
+		public $tech_used2;
+		public $tech_used3;
 
 		// Methods
-		function set_title($title) {
+		function set_title($title) {	
 			$this->title = $title;
 		}
 		function get_title() {
@@ -73,28 +82,49 @@
 			return $this->employer;
 		}
 
-		function set_achievement ($achievements) {
-			for ($i = 0; $i < count($achievements); $i++) {
-				$achievements_array[$i] = $value;
+		function set_achievement ($achievements_array) {			
+			for ($i = 0; $i < count($achievements_array); $i++) {
+				${'achievement' . $i + 1} = $achievements_array[$i]; 	/*dynamic variable! Initializes acheivement(1-3) Doing this to learn.
+																		  I know this is a lot more syntax but oh whale */
+				if ($i == 1) {											
+					$this->achievement1 = ${'achievement' . $i + 1};
+				}
+				elseif ($i == 2) {
+					$this->achievement2 = ${'achievement' . $i + 1};
+				}
+				else {
+					$this->achievement3 = ${'achievement' . $i + 1};
+				}
 			}
 		}
 		function get_achievement ($index) {
-			return $achievements_array[$index];
+			$return_achievement = $this->{'achievement' . $index};
+			return $return_achievement;
 		}
 
-		function set_tech_used ($index, $tech) {
-			$tech_used_array[$index] = $tech;
+		function set_tech_used ($tech_used_array) {
+			for ($i = 0; $i < count($tech_used_array); $i++) {
+				${'tech_used' . $i + 1} = $tech_used_array[$i]; 	/*dynamic variable! Initializes acheivement(1-3) Doing this to learn.
+																		  I know this is a lot more syntax but oh whale */
+				if ($i == 1) {											
+					$this->tech_used1 = ${'tech_used' . $i + 1};
+				}
+				elseif ($i == 2) {
+					$this->tech_used2 = ${'tech_used' . $i + 1};
+				}
+				else {
+					$this->tech_used3 = ${'tech_used' . $i + 1};
+				}
+			}
 		}
 		function get_tech_used ($index) {
-			return $tech_used_array[$index];
+			$return_tech_used = $this->{'tech_used' . $index};
+			return $return_tech_used;
 		}
 	};
 
 	// constructing digitorium position
 	$digitorium = New experience();
-
-	// storing digitorium position in experience_array
-	$experience_array[0] = $digitorium;
 
 	// setting properties 
 	$digitorium->set_title('Digitorium Technical Support Specialist');
@@ -110,11 +140,7 @@
 
 	$digitorium->set_achievement(array('Understanding of Matrix switcher for audio/video routing', 'Live Audio Soundscaping', 'Event Management'));
 
-	$digitorium->set_tech_used(0, 'Creston use for video/audio routing');
-	$digitorium->set_tech_used(1, 'Robotic/LED light fixture');
-	$digitorium->set_tech_used(2, 'Video Wall');
-
-
+	$digitorium->set_tech_used(array('Creston use for video/audio routing', 'Robotic/LED light fixture', 'Video Wall'));
 
 ?>
 <!DOCTYPE html>
@@ -204,19 +230,15 @@
 										    <p><?php echo "" . $digitorium->get_description()?></p>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
 										    <ul>
-											    <li><?php echo "" . $digitorium->get_achievement(0)?></li>
 											    <li><?php echo "" . $digitorium->get_achievement(1)?></li>
-											    <li>Blanditiis praesentium voluptatum deleniti atque corrupti.</li>
-											    <li>Maecenas tempus tellus eget.</li>
+											    <li><?php echo "" . $digitorium->get_achievement(2)?></li>
+											    <li><?php echo "" . $digitorium->get_achievement(3)?></li>
 										    </ul>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Angular</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Python</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">jQuery</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">Webpack</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">HTML/SASS</span></li>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill">PostgresSQL</span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(1)?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(2)?></span></li>
+											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?php echo "" . $digitorium->get_tech_used(3)?></span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
 
