@@ -18,15 +18,3 @@ This assingment is to use the echo function to fill in resume information inside
   -In the set_achievement function inside the $experience object, does not recognize the $achievemets_array as an array. This particular issue is causing errors in the display fields for their correlated outputs 
    (get_achievement output)
   -Profile image is not sized correctly
-
-
-              **_**8/26/24**_**
-
-**CHANGES**
-  -Removed unnecessary lines inside the PHP document.
-  -Initialized all other previous jobs
-  -Created associative arrays to store, awards, languages, and projects
-              - Some of these arrays are 2 dimensional
-  -Added images for the $projects
-  -Resized Profile image to fill in correctly
-  
