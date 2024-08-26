@@ -4,8 +4,8 @@ The goal of this project is to learn PHP syntax and usage inside of a HTML docum
 
 This assingment is to use the echo function to fill in resume information inside a HTML document.
 
-            
-            **_**8/25/24**_**
+          
+Patch 1            **_**8/25/24**_**
 
 **CHANGES**
   -Removed *most* unnecessary files in other folders.
@@ -19,7 +19,7 @@ This assingment is to use the echo function to fill in resume information inside
   -Profile image is not sized correctly
 
 
-              **_**8/26/24**_**
+ Patch 2             **_**8/26/24**_**
 
 **CHANGES**
   -Removed unnecessary lines inside the PHP document.
