@@ -9,9 +9,8 @@
 	$phone_num = "(101)-010-1010";
 	$email = "zero@one.com";
 
-	$linkedin = "linkedin.com/in/natebrewer09";
-	$gitHub = "github.com/brewern5";
-	$my_web = "nate.brewer.com";
+	$linkedin = "https://www.linkedin.com/in/natebrewer09/";
+	$gitHub = "https://github.com/brewern5";
 
 	$profile_img = array("src" => "assets/images/Nateimg.jpg", "alt" => "This is an image of me, if you couldn't tell.");
 
@@ -38,6 +37,7 @@
 					I am a guitarist with a passion for music, I mostly cover songs but have
 					been working on a few originals. Fly fishing is a recent hobby of mine,
 					I just learned the basics over this past summer.";
+
 	$interests_array = 	array( "Guitar", "Fly Fishing", "Wood-Working" );
 
 	//Education information - fun little 2d array with associatve arrays
@@ -272,15 +272,14 @@
 									<?php echo "$job_title" ?>
 								</div>
 							    <ul class="list-unstyled">
-								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?php echo "$email" ?></a></li>
-								    <li><a class="text-link" href="#"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?php echo "$phone_num" ?></a></li>
+								    <li class="mb-2"><a class="text-link" href=<?php echo "$email" ?>><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?php echo "$email" ?></a></li>
+								    <li><a class="text-link" href=<?php echo "$phone_num" ?>><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?php echo "$phone_num" ?></a></li>
 							    </ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
 							    <ul class="resume-social list-unstyled">
-					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span><?php echo "$linkedin" ?></a></li>
-					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span> <?php echo "$gitHub" ?> </a></li>
-					                <li><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span><?php echo "$my_web" ?></a></li>
+					                <li class="mb-3"><a class="text-link" href=<?php echo "$linkedin" ?>><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span>LinkedIn</a></li>
+					                <li class="mb-3"><a class="text-link" href="<?php echo $gitHub ?>"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span>GitHub</a></li>
 							    </ul>
 						    </div><!--//secondary-info-->
 					    </div><!--//row-->
@@ -332,10 +331,10 @@
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $planetarium->get_title() ?></h3>
-										        <div class="resume-company-name ms-auto"><?php echo "" . $planetarium->get_employer() ?></div>
+										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $planetarium->get_title(); ?></h3>
+										        <div class="resume-company-name ms-auto"><?php echo "" . $planetarium->get_employer(); ?></div>
 										    </div><!--//row-->
-										    <div class="resume-position-time"><?php echo "" . $planetarium->get_position_time() ?></div>
+										    <div class="resume-position-time"><?php echo "" . $planetarium->get_position_time(); ?></div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
 										    <p><?php echo "" . $planetarium->get_description(); ?></p>
