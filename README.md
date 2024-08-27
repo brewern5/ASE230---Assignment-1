@@ -15,7 +15,8 @@ Patch 1            **_**8/25/24**_**
   -Replaced some Work Experience information for the first position
 
 **KNOWN ISSUES**
-  -In the set_achievement function inside the $experience object, does not recognize the $achievemets_array as an array. This particular issue is causing errors in the display fields for their correlated outputs (get_achievement output)
+  -In the set_achievement function inside the $experience object, does not recognize the $achievemets_array as an array. This particular issue is causing errors in the display fields for their correlated outputs 
+   (get_achievement output)
   -Profile image is not sized correctly
 
 
