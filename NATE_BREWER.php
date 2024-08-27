@@ -9,9 +9,8 @@
 	$phone_num = "(101)-010-1010";
 	$email = "zero@one.com";
 
-	$linkedin = "linkedin.com/in/natebrewer09";
-	$gitHub = "github.com/brewern5";
-	$my_web = "nate.brewer.com";
+	$linkedin = "https://www.linkedin.com/in/natebrewer09/";
+	$gitHub = "https://github.com/brewern5";
 
 	$profile_img = array("src" => "assets/images/Nateimg.jpg", "alt" => "This is an image of me, if you couldn't tell.");
 
@@ -38,6 +37,7 @@
 					I am a guitarist with a passion for music, I mostly cover songs but have
 					been working on a few originals. Fly fishing is a recent hobby of mine,
 					I just learned the basics over this past summer.";
+
 	$interests_array = 	array( "Guitar", "Fly Fishing", "Wood-Working" );
 
 	//Education information - fun little 2d array with associatve arrays
@@ -266,21 +266,20 @@
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">
-									<?php echo "$first_name $last_name" ?>
+									<?php echo $first_name $last_name; ?>
 								</h1>
 							    <div class="title mb-3">
-									<?php echo "$job_title" ?>
+									<?php echo $job_title; ?>
 								</div>
 							    <ul class="list-unstyled">
-								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?php echo "$email" ?></a></li>
-								    <li><a class="text-link" href="#"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?php echo "$phone_num" ?></a></li>
+								    <li class="mb-2"><a class="text-link" href=<?php echo $email; ?>><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?php echo $email; ?></a></li>
+								    <li><a class="text-link" href=<?php echo $phone_num; ?>><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i><?php echo $phone_num; ?></a></li>
 							    </ul>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
 							    <ul class="resume-social list-unstyled">
-					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span><?php echo "$linkedin" ?></a></li>
-					                <li class="mb-3"><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span> <?php echo "$gitHub" ?> </a></li>
-					                <li><a class="text-link" href="#"><span class="fa-container text-center me-2"><i class="fas fa-globe"></i></span><?php echo "$my_web" ?></a></li>
+					                <li class="mb-3"><a class="text-link" href=<?php echo $linkedin; ?>><span class="fa-container text-center me-2"><i class="fab fa-linkedin-in fa-fw"></i></span>LinkedIn</a></li>
+					                <li class="mb-3"><a class="text-link" href="<?php echo $gitHub; ?>"><span class="fa-container text-center me-2"><i class="fab fa-github-alt fa-fw"></i></span>GitHub</a></li>
 							    </ul>
 						    </div><!--//secondary-info-->
 					    </div><!--//row-->
@@ -292,7 +291,7 @@
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0"><?php echo $education_long . " " . $work_exp . " " . $interests_long ?></p>
+					    <p class="mb-0"><?php echo $education_long . " " . $work_exp . " " . $interests_long; ?></p>
 				    </div>
 			    </section><!--//summary-section-->
 			    <div class="row">
@@ -332,10 +331,10 @@
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $planetarium->get_title() ?></h3>
-										        <div class="resume-company-name ms-auto"><?php echo "" . $planetarium->get_employer() ?></div>
+										        <h3 class="resume-position-title font-weight-bold mb-1"><?php echo "" . $planetarium->get_title(); ?></h3>
+										        <div class="resume-company-name ms-auto"><?php echo "" . $planetarium->get_employer(); ?></div>
 										    </div><!--//row-->
-										    <div class="resume-position-time"><?php echo "" . $planetarium->get_position_time() ?></div>
+										    <div class="resume-position-time"><?php echo "" . $planetarium->get_position_time(); ?></div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
 										    <p><?php echo "" . $planetarium->get_description(); ?></p>
@@ -421,32 +420,32 @@
 						        <div class="resume-skill-item">
 							        <ul class="list-unstyled mb-4">
 								        <li class="mb-2">
-								            <div class="resume-skill-name"><?php echo "$skills[0]" ?></div>
+								            <div class="resume-skill-name"><?php echo $skills[0]; ?></div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name"><?php echo "$skills[1]" ?></div>
+								            <div class="resume-skill-name"><?php echo $skills[1]; ?></div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name"><?php echo "$skills[2]" ?></div>
+								            <div class="resume-skill-name"><?php echo $skills[2]; ?></div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 96%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        
 								        <li class="mb-2">
-								            <div class="resume-skill-name"><?php echo "$skills[3]" ?></div>
+								            <div class="resume-skill-name"><?php echo $skills[3]; ?></div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 36.51342%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name"><?php echo "$skills[4]" ?></div>
+								            <div class="resume-skill-name"><?php echo $skills[4]; ?></div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 7.92874001%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
@@ -456,13 +455,13 @@
 						        <div class="resume-skill-item">
 						            <h4 class="resume-skills-cat font-weight-bold">Others</h4>
 						            <ul class="list-inline">
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[0]" ?></span></li>
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[1]" ?></span></li>
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[2]" ?></span></li>
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[3]" ?></span></li>
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[4]" ?></span></li>
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[5]" ?></span></li>
-							            <li class="list-inline-item"><span class="badge badge-light"><?php echo "$other_skills[6]" ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[0]; ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[1]; ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[2]; ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[3]; ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[4]; ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[5]; ?></span></li>
+							            <li class="list-inline-item"><span class="badge badge-light"><?php echo ;$other_skills[6]; ?></span></li>
 						            </ul>
 						        </div><!--//resume-skill-item-->
 						    </div><!--resume-section-content-->
@@ -472,14 +471,14 @@
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled">
 								    <li class="mb-2">
-								        <div class="resume-degree font-weight-bold"><?php echo $education[0]["honors"] ?></div>
-								        <div class="resume-degree-org"><?php echo $education[0]["location"] ?></div>
-								        <div class="resume-degree-time"><?php echo $education[0]["year"] ?></div>
+								        <div class="resume-degree font-weight-bold"><?php echo $education[0]['honors']; ?></div>
+								        <div class="resume-degree-org"><?php echo $education[0]['location']; ?></div>
+								        <div class="resume-degree-time"><?php echo $education[0]['year']; ?></div>
 								    </li>
 								    <li>
-								        <div class="resume-degree font-weight-bold"><?php echo $education[1]["honors"] ?></div>
-								        <div class="resume-degree-org"><?php echo $education[1]["location"] ?></div>
-								        <div class="resume-degree-time"><?php echo $education[1]["year"] ?></div>
+								        <div class="resume-degree font-weight-bold"><?php echo $education[1]['honors']; ?></div>
+								        <div class="resume-degree-org"><?php echo $education[1]['location']; ?></div>
+								        <div class="resume-degree-time"><?php echo $education[1]['year']; ?></div>
 								    </li>
 							    </ul>
 						    </div>
@@ -490,13 +489,13 @@
 							    <ul class="list-unstyled resume-awards-list">
 								    <li class="mb-2 ps-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name"><?php echo $awards[0]["award_name"] ?></div>
-								        <div class="resume-award-desc"><?php echo $awards[0]["award_des"] ?></div>
+								        <div class="resume-award-name"><?php echo $awards[0]['award_name']; ?></div>
+								        <div class="resume-award-desc"><?php echo $awards[0]['award_des']; ?></div>
 								    </li>
 								    <li class="mb-0 ps-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name"><?php echo $awards[1]["award_name"] ?></div>
-								        <div class="resume-award-desc"><?php echo $awards[1]["award_des"] ?></div>
+								        <div class="resume-award-name"><?php echo $awards[1]['award_name']; ?></div>
+								        <div class="resume-award-desc"><?php echo $awards[1]['award_des']; ?></div>
 								    </li>
 							    </ul>
 						    </div>
@@ -505,8 +504,8 @@
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Languages</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled resume-lang-list">
-								    <li class="mb-2"><span class="resume-lang-name font-weight-bold"><?php echo $languages[0]["lang"] ?></span><small class="text-muted font-weight-normal"><?php echo $languages[0]["profecient"] ?></span></small></li>
-								    <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold"><?php echo $languages[1]["lang"] ?></span></span> <small class="text-muted font-weight-normal"><?php echo $languages[1]["profecient"] ?></span></small></li>
+								    <li class="mb-2"><span class="resume-lang-name font-weight-bold"><?php echo $languages[0]['lang']; ?></span><small class="text-muted font-weight-normal"><?php echo $languages[0]['profecient']; ?></span></small></li>
+								    <li class="mb-2 align-middle"><span class="resume-lang-name font-weight-bold"><?php echo $languages[1]['lang']; ?></span></span> <small class="text-muted font-weight-normal"><?php echo $languages[1]['profecient']; ?></span></small></li>
 							    </ul>
 						    </div>
 					    </section><!--//language-section-->
@@ -514,9 +513,9 @@
 						    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Interests</h2>
 						    <div class="resume-section-content">
 							    <ul class="list-unstyled">
-								    <li class="mb-1"><?php echo $interests_array[0] ?></li>
-								    <li class="mb-1"><?php echo $interests_array[1] ?></li>
-								    <li class="mb-1"><?php echo $interests_array[2] ?></li>
+								    <li class="mb-1"><?php echo $interests_array[0]; ?></li>
+								    <li class="mb-1"><?php echo $interests_array[1];?></li>
+								    <li class="mb-1"><?php echo $interests_array[2]; ?></li>
 							    </ul>
 						    </div>
 					    </section><!--//interests-section-->
@@ -528,31 +527,31 @@
 					<div class="row mt-4">
 						<div class="col-md-4">
 							<div class="card">
-								<img src="<?php echo $project[0]["proj_img_src"] ?>" alt="<?php echo $project[0]["proj_name"] ?>" class="card-img-top">
+								<img src="<?php echo $project[0]['proj_img_src']; ?>" alt="<?php echo $project[0]['proj_name']; ?>" class="card-img-top">
 								<div class="card-body">
-									<h5 class="card-title"><?php echo $project[0]["proj_name"] ?></h5>
-									<p class="card-text"><?php echo $project[0]["proj_des"] ?></p>
-									<a href=<?php echo $project[0]["proj_link"] ?>>Go to link</a>
+									<h5 class="card-title"><?php echo $project[0]['proj_name']; ?></h5>
+									<p class="card-text"><?php echo $project[0]['proj_des']; ?></p>
+									<a href=<?php echo $project[0]['proj_link']; ?>>Go to link</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="card">
-								<img src=<?php echo $project[1]["proj_img_src"] ?> alt=<?php echo $project[1]["proj_name"] ?> class="card-img-top">
+								<img src=<?php echo $project[1]['proj_img_src']; ?> alt=<?php echo $project[1]['proj_name']; ?> class="card-img-top">
 								<div class="card-body">
-									<h5 class="card-title"><?php echo $project[1]["proj_name"] ?></h5>
-									<p class="card-text"><?php echo $project[1]["proj_des"] ?></p>
-									<a href=<?php echo $project[1]["proj_link"] ?>>Go to link</a>
+									<h5 class="card-title"><?php echo $project[1]['proj_name']; ?></h5>
+									<p class="card-text"><?php echo $project[1]['proj_des']; ?></p>
+									<a href=<?php echo $project[1]['proj_link']; ?>>Go to link</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-4">
 							<div class="card">
-								<img src=<?php echo $project[2]["proj_img_src"] ?> alt=<?php echo $project[2]["proj_name"] ?> class="card-img-top">
+								<img src=<?php echo $project[2]['proj_img_src']; ?> alt=<?php echo $project[2]['proj_name']; ?> class="card-img-top">
 								<div class="card-body">
-									<h5 class="card-title"><?php echo $project[2]["proj_name"] ?></h5>
-									<p class="card-text"><?php echo $project[2]["proj_des"] ?></p>
-									<a href=<?php echo $project[2]["proj_link"] ?>>Go to link</a>
+									<h5 class="card-title"><?php echo $project[2]['proj_name']; ?></h5>
+									<p class="card-text"><?php echo $project[2]['proj_des'] ?></p>
+									<a href=<?php echo $project[2]['proj_link']; ?>>Go to link</a>
 								</div>
 							</div>
 						</div>
@@ -567,7 +566,7 @@
     
     <footer class="footer text-center pt-2 pb-5">
 	    <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i><?php echo $first_name . " " . $last_name ?></small>
+        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart"></i><?php echo $first_name . " " . $last_name; ?></small>
     </footer>
 
     
