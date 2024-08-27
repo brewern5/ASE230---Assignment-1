@@ -29,3 +29,10 @@ Patch 1            **_**8/25/24**_**
               - Some of these arrays are 2 dimensional
   -Added images for the $projects
   -Resized Profile image to fill in correctly
+
+  Patch 3           **_**8/27/24**_**
+
+  **CHANGES**
+    -Added ; to the end of in-line echo functions
+    -Replaced all "" strings with ''
+    -Learned that you can have arrays inside objects
